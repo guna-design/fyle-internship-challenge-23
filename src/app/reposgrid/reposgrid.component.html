@@ -1,0 +1,21 @@
+<div class="pt-10">
+  <mat-grid-list cols="2" rowHeight="245">
+      <mat-grid-tile class="h-56 z-10" *ngFor="let repo of repos">
+        <a class="content bg-[hsla(20,9%,93%,1)] shadow-xl sm:max-w-lg sm:mx-auto rounded-xl sm:px-10 p-5 w-10/12 h-56" href="{{ repo?.html_url }}">
+            <div class="divide-y divide-gray-400/50">
+          <div class="name text-3xl text-gray-600 font-bold overflow-hidden">{{ repo.name }}</div>
+          <div class="description h-16 mt-7 font-medium text-gray-900 overflow-y-hidden">
+            {{ repo.description }}
+          </div>
+        </div>
+          <div class="divide-y"></div>
+          <div id="topics" class="m-2  ">
+            <app-topics [topics]="repo.topics" class="flex"></app-topics>
+          </div>
+      
+        </a>
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<!-- <div class="w-8 h-8 bg-[#dd6b6c] transition-all rounded-full block ring-[#dd6b6c] hover:ring-2 ring-offset-1 " ></div> -->
